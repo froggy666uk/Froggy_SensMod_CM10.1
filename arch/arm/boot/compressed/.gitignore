@@ -5,7 +5,6 @@ piggy.lzo
 piggy.lzma
 vmlinux
 vmlinux.lds
-ashldi3.S
 
 # borrowed libfdt files
 fdt.c
