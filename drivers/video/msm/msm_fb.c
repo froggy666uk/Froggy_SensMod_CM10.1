@@ -108,10 +108,10 @@ DEFINE_RATELIMIT_STATE(fps_msg_ratelimit, 120 * HZ, 5);
 
 u32 fps_interval;
 /* Setting msm_fb_msg_level to 8 prints out ALL messages */
-u32 msm_fb_msg_level = 7;
+u32 msm_fb_msg_level = 0;
 
 /* Setting mddi_msg_level to 8 prints out ALL messages */
-u32 mddi_msg_level = 5;
+u32 mddi_msg_level = 0;
 
 static int msm_fb_register(struct msm_fb_data_type *mfd);
 static int msm_fb_open(struct fb_info *info, int user);
