@@ -12,10 +12,11 @@ MAKE="4"
 ## Set compiler location to compile with linaro cortex a8
 echo "Setting compiler location..."
 export ARCH=arm
-export CROSS_COMPILE=$HOME/android/system/prebuilt/linux-x86/toolchain/linaro-arm-cortex-a8/bin/arm-cortex_a8-linux-gnueabi-
+#export CROSS_COMPILE=$HOME/android/system/prebuilt/linux-x86/toolchain/linaro-arm-cortex-a8/bin/arm-cortex_a8-linux-gnueabi-
+export CROSS_COMPILE=/kernel_build/android-toolchain-eabi-4.8-072013/bin/arm-eabi-
 
-## Build kernel using pyramid_defconfig
-make pyramid_defconfig
+## Build kernel using froggy_defconfig
+make froggy_defconfig
 make -j`grep 'processor' /proc/cpuinfo | wc -l` ARCH=arm
 sleep 1
 

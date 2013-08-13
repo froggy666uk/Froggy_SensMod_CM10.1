@@ -80,3 +80,7 @@ GTAGS
 *.orig
 *~
 \#*#
+
+# DJ ignore generated stuff and helper scripts
+Packages
+/build-pyramid.sh
