@@ -13,7 +13,8 @@ MAKE="4"
 echo "Setting compiler location..."
 export ARCH=arm
 #export CROSS_COMPILE=$HOME/android/system/prebuilt/linux-x86/toolchain/linaro-arm-cortex-a8/bin/arm-cortex_a8-linux-gnueabi-
-export CROSS_COMPILE=/kernel_build/android-toolchain-eabi-4.8-072013/bin/arm-eabi-
+#export CROSS_COMPILE=/kernel_build/android-toolchain-eabi-4.8-072013/bin/arm-eabi-
+export CROSS_COMPILE=/kernel_build/arm-cortex_a8-linux-gnueabi-linaro_4.8.2-2013.07/bin/arm-cortex_a8-linux-gnueabi-
 
 ## Build kernel using froggy_defconfig
 make froggy_defconfig
