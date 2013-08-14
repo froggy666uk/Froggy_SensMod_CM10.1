@@ -37,10 +37,15 @@ cp -rf prebuilt-scripts/META-INF/ Packages/out/
 cp -rf prebuilt-scripts/kernel_dir/* Packages/out/kernel/
 cp arch/arm/boot/zImage Packages/out/kernel/
 
+# Save latest commit in zip
+git log -1 > Packages/out/META-INF/latestcommit.out
+
 # build flashable zip
-     export curdate=`date "+%m-%d-%Y"`
+     export curdate=`date "+%Y-%m-%d_%H%M"`
+     fname=Froggy-SensMOD-CM10.2-$curdate.zip
+     echo "Creating $fname..."
      cd Packages/out/
-     zip -r ../pyramid-kernel-dev-$curdate.zip .
+     zip -r ../$fname .
      echo "Deleting Temp files and folders...."
      cd ../../
      rm -rf Packages/out/
@@ -48,5 +53,6 @@ cp arch/arm/boot/zImage Packages/out/kernel/
 echo "Build Complete, Check Packages directory for flashable zip"
 time_end=$(date +%s.%N)
 echo -e "${BLDYLW}Total time elapsed: ${TCTCLR}${TXTGRN}$(echo "($time_end - $time_start) / 60"|bc ) ${TXTYLW}minutes${TXTGRN} ($(echo "$time_end - $time_start"|bc ) ${TXTYLW}seconds) ${TXTCLR}"
+echo "SCP using scp -i ~/.ssh/mydroid.key Packages/$fname root@pyramid:/sdcard/"
 
 
